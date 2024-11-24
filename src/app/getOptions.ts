@@ -26,6 +26,7 @@ export default async function getOptions({
 }: getOptionsProps): Promise<responseOptions | string> {
   const DB_USER = process.env.DB_USER;
   const DB_PSWD = process.env.DB_PSWD;
+  if (!DB_USER || !DB_PSWD) return "";
   const config = {
     auth: {
       username: DB_USER,
