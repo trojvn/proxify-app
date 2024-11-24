@@ -1,8 +1,6 @@
 .mainSection {
-  /* background: var(--tgui--secondary_bg_color); */
-  /* background: var(--tgui--primary_bg_color); */
+  background: var(--tgui--secondary_bg_color);
   padding: 0px;
-  /* width: 500px; */
 }
 
 .formInput {
@@ -11,14 +9,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* height: 580px; */
   gap: 2px;
   align-items: stretch;
 }
-
-/* .formSection {
-  background-color: var(--tgui--primary_bg_color);
-} */
 
 .button {
   margin-left: 20px;
