@@ -1,6 +1,6 @@
 "use client";
 
-import { useLaunchParams } from "@telegram-apps/sdk-react";
+import { miniApp, useLaunchParams, useSignal } from "@telegram-apps/sdk-react";
 import { AppRoot } from "@telegram-apps/telegram-ui";
 import { type PropsWithChildren, useEffect } from "react";
 
@@ -18,6 +18,7 @@ function RootInner({ children }: PropsWithChildren) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useTelegramMock();
   }
+  const isDark = useSignal(miniApp.isDark);
 
   const lp = useLaunchParams();
   const debug = isDev || lp.startParam === "debug";
@@ -32,7 +33,11 @@ function RootInner({ children }: PropsWithChildren) {
   }, [debug]);
 
   return (
-    <AppRoot appearance="dark" platform="base">
+    <AppRoot
+      appearance={isDark ? "dark" : "light"}
+      platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
+    >
+      {/* <AppRoot appearance={"light"} platform="base"> */}
       {children}
     </AppRoot>
   );
