@@ -1,0 +1,32 @@
+{
+  "name": "proxify-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@telegram-apps/react-router-integration": "^1.0.1",
+    "@telegram-apps/sdk": "^2.6.2",
+    "@telegram-apps/sdk-react": "^2.0.12",
+    "@telegram-apps/telegram-ui": "^2.1.8",
+    "axios": "^1.7.7",
+    "classnames": "^2.5.1",
+    "eruda": "^3.4.1",
+    "next": "14.2.18",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.53.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.18",
+    "typescript": "^5"
+  }
+}
