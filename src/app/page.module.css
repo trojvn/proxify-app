@@ -1,6 +1,6 @@
 .mainSection {
   background: var(--tgui--secondary_bg_color);
-  padding: 0px;
+  padding: 10px;
 }
 
 .formInput {
