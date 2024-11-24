@@ -10,6 +10,7 @@ import {
   Section,
   Textarea,
 } from "@telegram-apps/telegram-ui";
+import { FormInput } from "@telegram-apps/telegram-ui/dist/components/Form/FormInput/FormInput";
 import cn from "classnames";
 import { useEffect, useState } from "react";
 import createRotation from "./createRotation";
@@ -75,35 +76,35 @@ export default function Home() {
         <CellsWrapper values={createdProxies} />
       </Section>
       <Section header="Создание ротационки">
-        {/* <FormInput status="default" className={styles.formInput}> */}
-        <SelectsWrapper
-          header="Выберите сервер"
-          values={SERVERS}
-          value={server}
-          onChange={(e) => setServer(e.target.value)}
-        />
-        <SelectsWrapper
-          header="Выберите порт"
-          values={apiOptions?.ports}
-          value={port}
-          onChange={(e) => setPort(parseInt(e.target.value))}
-        />
-        <SelectsWrapper
-          header="Выберите алгоритм"
-          values={algos}
-          value={algo}
-          onChange={(e) => setAlgo(e.target.value)}
-        />
-        <Textarea
-          header="Вставьте список проксей"
-          placeholder={textAreaPlaceholder}
-          value={proxies}
-          onChange={(e) => setProxies(e.target.value)}
-        />
-        <Button onClick={onClickCreateRotation} className={styles.button}>
-          Создать ротационку
-        </Button>
-        {/* </FormInput> */}
+        <FormInput status="default" className={styles.formInput}>
+          <SelectsWrapper
+            header="Выберите сервер"
+            values={SERVERS}
+            value={server}
+            onChange={(e) => setServer(e.target.value)}
+          />
+          <SelectsWrapper
+            header="Выберите порт"
+            values={apiOptions?.ports}
+            value={port}
+            onChange={(e) => setPort(parseInt(e.target.value))}
+          />
+          <SelectsWrapper
+            header="Выберите алгоритм"
+            values={algos}
+            value={algo}
+            onChange={(e) => setAlgo(e.target.value)}
+          />
+          <Textarea
+            header="Вставьте список проксей"
+            placeholder={textAreaPlaceholder}
+            value={proxies}
+            onChange={(e) => setProxies(e.target.value)}
+          />
+          <Button onClick={onClickCreateRotation} className={styles.button}>
+            Создать ротационку
+          </Button>
+        </FormInput>
       </Section>
     </List>
   );
