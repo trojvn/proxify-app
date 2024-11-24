@@ -1,7 +1,7 @@
 .mainSection {
   background: var(--tgui--secondary_bg_color);
-  padding: 40px;
-  width: 500px;
+  padding: 0px;
+  /* width: 500px; */
 }
 
 .formInput {
