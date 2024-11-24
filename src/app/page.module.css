@@ -1,5 +1,5 @@
 .mainSection {
-  background: var(--tgui--secondary_bg_color);
+  /* background: var(--tgui--secondary_bg_color); */
   /* background: var(--tgui--primary_bg_color); */
   padding: 0px;
   /* width: 500px; */
@@ -16,9 +16,9 @@
   align-items: stretch;
 }
 
-.formSection {
+/* .formSection {
   background-color: var(--tgui--primary_bg_color);
-}
+} */
 
 .button {
   margin-left: 20px;
