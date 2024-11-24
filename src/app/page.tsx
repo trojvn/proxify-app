@@ -75,7 +75,7 @@ export default function Home() {
       <Section header="Список созданных ротационок">
         <CellsWrapper values={createdProxies} />
       </Section>
-      <Section header="Создание ротационки">
+      <Section header="Создание ротационки" className={styles.formSection}>
         <FormInput status="default" className={styles.formInput}>
           <SelectsWrapper
             header="Выберите сервер"
