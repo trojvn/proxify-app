@@ -4,14 +4,16 @@ import { responseOptions } from "@/services/getOptions";
 import proxyChecker, { checkResult } from "@/services/proxyChecker";
 import { Button, Textarea } from "@telegram-apps/telegram-ui";
 import { FormInput } from "@telegram-apps/telegram-ui/dist/components/Form/FormInput/FormInput";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CheckerGrid from "../CheckerGrid/CheckerGrid";
 import styles from "./CheckerForm.module.css";
 
 export default function CheckerForm({
   apiOptions,
+  createdProxies,
 }: {
   apiOptions?: responseOptions;
+  createdProxies: string[];
 }) {
   const [started, setStarted] = useState(false);
   const [proxies, setProxies] = useState<string[]>([]);
@@ -49,9 +51,9 @@ export default function CheckerForm({
     });
   };
 
-  useEffect(() => {
-    console.log(checkedProxies);
-  }, [checkedProxies]);
+  const onClickRChecker = () => {
+    setProxies((prev) => [...prev, ...createdProxies]);
+  };
 
   return (
     <>
@@ -73,6 +75,13 @@ export default function CheckerForm({
           status="error"
           value={errorProxies.join("\n")}
         />
+        <Button
+          className={styles.button}
+          disabled={started}
+          onClick={onClickRChecker}
+        >
+          Вставить ротационки
+        </Button>
         <Button
           className={styles.button}
           onClick={onClickChecker}

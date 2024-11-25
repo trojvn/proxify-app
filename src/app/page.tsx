@@ -57,7 +57,7 @@ export default function Home() {
         />
       </Section>
       <Section header="Чекер прокси">
-        <CheckerForm apiOptions={apiOptions} />
+        <CheckerForm apiOptions={apiOptions} createdProxies={createdProxies} />
       </Section>
     </List>
   );
