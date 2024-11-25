@@ -1,5 +1,6 @@
 "use client";
 import CellsWrapper from "@/components/CellsWrapper/CellsWrapper";
+import CheckerForm from "@/components/CheckerForm/CheckerForm";
 import CreateRotationForm from "@/components/CreateRotationForm/CreateRotationForm";
 import DeleteRotationForm from "@/components/DeleteRotationForm/DeleteRotationForm";
 import ViewRotationForm from "@/components/ViewRotationForm/ViewRotationForm";
@@ -54,6 +55,9 @@ export default function Home() {
           apiOptions={apiOptions}
           createdProxies={createdProxies}
         />
+      </Section>
+      <Section header="Чекер прокси">
+        <CheckerForm apiOptions={apiOptions} />
       </Section>
     </List>
   );
