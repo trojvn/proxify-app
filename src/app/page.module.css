@@ -2,18 +2,3 @@
   background: var(--tgui--secondary_bg_color);
   padding: 10px;
 }
-
-.formInput {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 2px;
-  align-items: stretch;
-}
-
-.button {
-  margin-left: 20px;
-  margin-right: 20px;
-}
