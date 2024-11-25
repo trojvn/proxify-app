@@ -1,12 +1,13 @@
 "use client";
 import CellsWrapper from "@/components/CellsWrapper/CellsWrapper";
 import CreateRotationForm from "@/components/CreateRotationForm/CreateRotationForm";
+import DeleteRotationForm from "@/components/DeleteRotationForm/DeleteRotationForm";
+import ViewRotationForm from "@/components/ViewRotationForm/ViewRotationForm";
 import { useLaunchParams } from "@telegram-apps/sdk-react";
 import { Cell, List, Section } from "@telegram-apps/telegram-ui";
-import { FormInput } from "@telegram-apps/telegram-ui/dist/components/Form/FormInput/FormInput";
 import cn from "classnames";
 import { useEffect, useState } from "react";
-import getOptions, { responseOptions } from "./getOptions";
+import getOptions, { responseOptions } from "../services/getOptions";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -34,14 +35,25 @@ export default function Home() {
       <Section header="Список созданных ротационок">
         <CellsWrapper values={createdProxies} />
       </Section>
-      <Section header="Создание ротационки"></Section>
-      <CreateRotationForm
-        apiOptions={apiOptions}
-        createdProxies={createdProxies}
-        setCreatedProxies={setCreatedProxies}
-      />
+      <Section header="Создание ротационки">
+        <CreateRotationForm
+          apiOptions={apiOptions}
+          createdProxies={createdProxies}
+          setCreatedProxies={setCreatedProxies}
+        />
+      </Section>
       <Section header="Удалить ротационку">
-        <FormInput></FormInput>
+        <DeleteRotationForm
+          apiOptions={apiOptions}
+          createdProxies={createdProxies}
+          setCreatedProxies={setCreatedProxies}
+        />
+      </Section>
+      <Section header="Состав ротационки">
+        <ViewRotationForm
+          apiOptions={apiOptions}
+          createdProxies={createdProxies}
+        />
       </Section>
     </List>
   );

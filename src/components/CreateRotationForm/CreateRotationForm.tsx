@@ -1,10 +1,6 @@
-import createRotation from "@/app/createRotation";
-import { responseOptions } from "@/app/getOptions";
-import {
-  ALGOS,
-  SERVERS,
-  TEXTAREA_PLACEHOLDER_IP_EXAMPLE as TEXTAREA_PLACEHOLDER_EXAMPLE,
-} from "@/helpers/consts";
+import { ALGOS, SERVERS, TEXTAREA_PLACEHOLDER_EXAMPLE } from "@/helpers/consts";
+import createRotation from "@/services/createRotation";
+import { responseOptions } from "@/services/getOptions";
 import { Button, Textarea } from "@telegram-apps/telegram-ui";
 import { FormInput } from "@telegram-apps/telegram-ui/dist/components/Form/FormInput/FormInput";
 import { useEffect, useState } from "react";
@@ -44,7 +40,12 @@ export default function CreateRotationForm({
       proxies: proxiesList,
     }).then((response) => {
       if (!response) return;
+      if (typeof response !== "string") {
+        alert(response.detail);
+        return;
+      }
       setCreatedProxies([...createdProxies, response]);
+      alert("Ротационка успешно создана");
     });
   };
   return (

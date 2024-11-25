@@ -18,7 +18,7 @@ export default async function createRotation({
   port: port,
   algo: algo,
   proxies: proxies,
-}: createRotationProps): Promise<string> {
+}: createRotationProps): Promise<string | { detail: string }> {
   const config = {
     withCredentials: true,
     auth: {
@@ -37,7 +37,6 @@ export default async function createRotation({
       return response.data["raw"];
     })
     .catch((error) => {
-      console.log(error.response.data);
-      return "";
+      return { detail: error.response.data.detail };
     });
 }
