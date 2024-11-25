@@ -17,8 +17,8 @@ export default function CheckerGrid({ rowData }: { rowData: checkResult[] }) {
     { field: "timezone" as keyof checkResult, flex: 1 },
   ];
   const rowClassRules = {
-    "rag-red": (params: any) => params.data.result === false,
-    "rag-green": (params: any) => params.data.result === true,
+    "rag-red": (params: { data: checkResult }) => params.data.result === false,
+    "rag-green": (params: { data: checkResult }) => params.data.result === true,
   };
   return (
     <div

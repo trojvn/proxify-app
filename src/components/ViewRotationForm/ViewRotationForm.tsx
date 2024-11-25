@@ -41,7 +41,7 @@ export default function ViewRotationForm({
       .catch(() => {
         setProxies([]);
       });
-  }, [selectedRotation, createdProxies]);
+  }, [selectedRotation, createdProxies, apiOptions]);
   return (
     <FormInput status="default" className={styles.formInput}>
       <SelectsWrapper
