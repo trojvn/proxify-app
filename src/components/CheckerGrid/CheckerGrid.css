@@ -1,7 +1,15 @@
+:root {
+  font-size: 8px;
+}
+
 .rag-green {
   background-color: #33cc3344;
 }
 
 .rag-red {
   background-color: #cc222244;
+}
+
+.ag-theme-material {
+  font-size: 10px;
 }

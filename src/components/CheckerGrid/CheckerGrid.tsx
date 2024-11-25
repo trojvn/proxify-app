@@ -30,6 +30,7 @@ export default function CheckerGrid({ rowData }: { rowData: checkResult[] }) {
         rowData={rowData}
         columnDefs={colDefs}
         rowClassRules={rowClassRules}
+        overlayNoRowsTemplate="Пусто"
       />
     </div>
   );
