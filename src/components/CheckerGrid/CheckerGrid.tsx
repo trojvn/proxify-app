@@ -1,5 +1,6 @@
 "use client";
 import { checkResult } from "@/services/proxyChecker";
+import { RowClassParams } from "ag-grid-community";
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-material.css"; // Optional Theme applied to the Data Grid
 import { AgGridReact } from "ag-grid-react";
@@ -17,8 +18,8 @@ export default function CheckerGrid({ rowData }: { rowData: checkResult[] }) {
     { field: "timezone" as keyof checkResult, flex: 1 },
   ];
   const rowClassRules = {
-    "rag-red": (params: { data: checkResult }) => params.data.result === false,
-    "rag-green": (params: { data: checkResult }) => params.data.result === true,
+    "rag-red": (params: RowClassParams) => params.data.result === false,
+    "rag-green": (params: RowClassParams) => params.data.result === true,
   };
   return (
     <div
