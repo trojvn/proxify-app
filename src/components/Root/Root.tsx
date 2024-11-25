@@ -18,7 +18,6 @@ function RootInner({ children }: PropsWithChildren) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useTelegramMock();
   }
-  // const isDark = useSignal(miniApp.isDark);
 
   const lp = useLaunchParams();
   const debug = isDev || lp.startParam === "debug";
@@ -33,13 +32,7 @@ function RootInner({ children }: PropsWithChildren) {
   }, [debug]);
 
   return (
-    <AppRoot
-      // appearance={isDark ? "dark" : "light"}
-      appearance={"light"}
-      platform="base"
-      // platform={["macos", "ios"].includes(lp.platform) ? "ios" : "base"}
-    >
-      {/* <AppRoot appearance={"light"} platform="base"> */}
+    <AppRoot appearance="dark" platform="base">
       {children}
     </AppRoot>
   );
