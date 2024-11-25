@@ -32,7 +32,7 @@ function RootInner({ children }: PropsWithChildren) {
   }, [debug]);
 
   return (
-    <AppRoot appearance="dark" platform="base">
+    <AppRoot appearance="light" platform="base">
       {children}
     </AppRoot>
   );
